@@ -1,6 +1,5 @@
 package co.com.choucair.financial.utestchallenge.tasks;
 
-import co.com.choucair.financial.utestchallenge.userinterfaces.UTestHome;
 import co.com.choucair.financial.utestchallenge.userinterfaces.UTestPersonal;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
@@ -8,9 +7,9 @@ import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.SendKeys;
 
-public class Step1 implements Task {
-    public static Step1 dataPersonal() {
-        return Tasks.instrumented(Step1.class);
+public class RegisterPersonalData implements Task {
+    public static RegisterPersonalData dataPersonal() {
+        return Tasks.instrumented(RegisterPersonalData.class);
     }
 
     @Override

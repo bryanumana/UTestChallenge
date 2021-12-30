@@ -8,9 +8,9 @@ import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.SendKeys;
 
-public class Step3 implements Task {
-    public static Step3 dataDevices() {
-        return Tasks.instrumented(Step3.class);
+public class RegisterDevicesData implements Task {
+    public static RegisterDevicesData dataDevices() {
+        return Tasks.instrumented(RegisterDevicesData.class);
     }
 
     @Override

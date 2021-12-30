@@ -1,18 +1,15 @@
 package co.com.choucair.financial.utestchallenge.tasks;
 
 import co.com.choucair.financial.utestchallenge.userinterfaces.UTestComplete;
-import co.com.choucair.financial.utestchallenge.userinterfaces.UTestDevices;
-import co.com.choucair.financial.utestchallenge.userinterfaces.UTestPersonal;
 import net.serenitybdd.screenplay.Actor;
-import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.SendKeys;
 
-public class Step4 implements Task {
-    public static Step4 dataPassword() {
-        return Tasks.instrumented(Step4.class);
+public class RegisterPasswordData implements Task {
+    public static RegisterPasswordData dataPassword() {
+        return Tasks.instrumented(RegisterPasswordData.class);
     }
 
     @Override

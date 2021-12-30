@@ -19,16 +19,16 @@ public class UTestAccountStepDefinitions {
 
     @Given("^user enters the UTest platform$")
     public void userEntersTheUTestPlatform() {
-        OnStage.theActorCalled("GLOBAL").wasAbleTo(Load.theWebSite(), StarRegistration.onThePage());
+        OnStage.theActorCalled("GLOBAL").wasAbleTo(LoadThePage.theWebSite(), StarRegistration.onThePage());
     }
 
     @When("^user registers their data and their devices by completing the text boxes$")
     public void userRegistersTheirDataAndTheirDevicesByCompletingTheTextBoxes() {
         OnStage.theActorInTheSpotlight().attemptsTo(
-                Step1.dataPersonal(),
-                Step2.dataAddress(),
-                Step3.dataDevices(),
-                Step4.dataPassword()
+                RegisterPersonalData.dataPersonal(),
+                RegisterAddressData.dataAddress(),
+                RegisterDevicesData.dataDevices(),
+                RegisterPasswordData.dataPassword()
         );
     }
 

@@ -7,9 +7,9 @@ import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.SendKeys;
 
-public class Step2 implements Task {
-    public static Step2 dataAddress() {
-        return Tasks.instrumented(Step2.class);
+public class RegisterAddressData implements Task {
+    public static RegisterAddressData dataAddress() {
+        return Tasks.instrumented(RegisterAddressData.class);
     }
 
     @Override

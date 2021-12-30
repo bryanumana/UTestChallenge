@@ -37,5 +37,5 @@ public class UTestDevices extends PageObject {
     public static final Target ENTER_BUTTON = Target.the("button to go to the next step")
             .locatedBy("//a[@class=\"btn btn-blue pull-right\"]");
 
-   //btn btn-blue pull-right
+    //btn btn-blue pull-right
 }
