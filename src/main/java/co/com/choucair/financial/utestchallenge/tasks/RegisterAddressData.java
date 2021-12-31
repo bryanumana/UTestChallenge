@@ -6,6 +6,7 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.SendKeys;
+import org.openqa.selenium.Keys;
 
 public class RegisterAddressData implements Task {
     public static RegisterAddressData dataAddress() {

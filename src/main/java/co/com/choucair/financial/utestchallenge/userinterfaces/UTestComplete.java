@@ -9,10 +9,14 @@ public class UTestComplete extends PageObject {
             .located(By.id("password"));
     public static final Target CONFIRM_PASSWORD_TEXT = Target.the("when you to confirm your password")
             .located(By.id("confirmPassword"));
+
+    public static final Target INFORMED_CHECK =Target.the("when you accept stay informed")
+            .locatedBy("//span[@class=\"checkmark signup-consent__checkbox signup-consent__checkbox--highlight\"]");
     public static final Target TERMS_CHECK = Target.the("when you accept the terms of use")
             .locatedBy("//span[@class=\"checkmark signup-consent__checkbox error\"]");
     public static final Target PRIVACY_CHECK = Target.the("when you accept privacy and security policy")
-            .locatedBy("//span[@ng-class=\"{error: userForm.privacySetting.$error.required}\"]");
+            .locatedBy("//span[@class=\"checkmark signup-consent__checkbox error\"]");
+
     public static final Target ENTER_BUTTON = Target.the("button to finish registration")
             .locatedBy("//a[@class=\"btn btn-blue\"]");
     public static final Target NAME_BUTTON = Target.the("button to finish registration")

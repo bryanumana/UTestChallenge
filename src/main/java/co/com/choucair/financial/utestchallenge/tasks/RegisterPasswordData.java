@@ -8,15 +8,25 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.SendKeys;
 
 public class RegisterPasswordData implements Task {
-    public static RegisterPasswordData dataPassword() {
-        return Tasks.instrumented(RegisterPasswordData.class);
+
+    private String strPassword;
+    private String strConfirmPassword;
+
+    public RegisterPasswordData(String strPassword, String strConfirmPassword) {
+        this.strPassword = strPassword;
+        this.strConfirmPassword = strConfirmPassword;
+    }
+
+    public static RegisterPasswordData dataPassword(String strPassword, String strConfirmPassword) {
+        return Tasks.instrumented(RegisterPasswordData.class, strPassword, strConfirmPassword);
     }
 
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                SendKeys.of("Choucair2021*").into(UTestComplete.PASSWORD_TEXT),
-                SendKeys.of("Choucair2021*").into(UTestComplete.CONFIRM_PASSWORD_TEXT),
+                SendKeys.of(strPassword).into(UTestComplete.PASSWORD_TEXT),
+                SendKeys.of(strConfirmPassword).into(UTestComplete.CONFIRM_PASSWORD_TEXT),
+                Click.on(UTestComplete.INFORMED_CHECK),
                 Click.on(UTestComplete.TERMS_CHECK),
                 Click.on(UTestComplete.PRIVACY_CHECK)
                 //Click.on(UTestComplete.ENTER_BUTTON)

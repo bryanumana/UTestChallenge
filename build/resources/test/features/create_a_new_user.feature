@@ -7,4 +7,10 @@ Feature: New Account On UTest
   Scenario: successful account creation
     Given user enters the UTest platform
     When user registers their data and their devices by completing the text boxes
-    Then user sees the button called Complete Setup
+    |strLastName| strName| strEmail | strMonth | strDay |strYear| strPassword | strConfirmPassword |
+    |Umaña Gómez     | macOS| bugh@gmail.com| June | 20   | 1990   | Choucair2021*| Choucair2021*    |
+
+    Then user sees the button called
+    |strNameButton|
+    |Complete Setup|
+

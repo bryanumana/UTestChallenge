@@ -4,10 +4,13 @@ import net.serenitybdd.screenplay.targets.Target;
 import net.thucydides.core.pages.PageObject;
 
 public class UTestDevices extends PageObject {
+
+    private static String strOsSelect = "Linux";
+
     public static final Target OS = Target.the("select your computer's operating system")
-            .locatedBy("(//span[@class=\"btn btn-default form-control ui-select-toggle\"])[1]");
+            .locatedBy("//span[@class=\"btn btn-default form-control ui-select-toggle\"]");
     public static final Target WINDOWS_SELECT = Target.the("the operating system is Windows")
-            .locatedBy("(//span[@class=\"ui-select-choices-row-inner\"])[2]");
+            .locatedBy("//span[@class=\"ui-select-choices-row-inner\"]//div[contains(text(),\""+ strOsSelect + "\")]");
 
     public static final Target VERSION = Target.the("select the version of the operating system")
             .locatedBy("(//span[@class=\"btn btn-default form-control ui-select-toggle\"])[2]");
@@ -37,5 +40,4 @@ public class UTestDevices extends PageObject {
     public static final Target ENTER_BUTTON = Target.the("button to go to the next step")
             .locatedBy("//a[@class=\"btn btn-blue pull-right\"]");
 
-    //btn btn-blue pull-right
 }
