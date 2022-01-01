@@ -1,15 +1,16 @@
 package co.com.choucair.financial.utestchallenge.userinterfaces;
 
+import co.com.choucair.financial.utestchallenge.tasks.RegisterDevicesData;
 import net.serenitybdd.screenplay.targets.Target;
 import net.thucydides.core.pages.PageObject;
 
 public class UTestDevices extends PageObject {
 
-    private static String strOsSelect = "Linux";
+    private static String strOsSelect = RegisterDevicesData.getStrOSI();
 
     public static final Target OS = Target.the("select your computer's operating system")
             .locatedBy("//span[@class=\"btn btn-default form-control ui-select-toggle\"]");
-    public static final Target WINDOWS_SELECT = Target.the("the operating system is Windows")
+    public static final Target OS_SELECT = Target.the("the operating system is Windows")
             .locatedBy("//span[@class=\"ui-select-choices-row-inner\"]//div[contains(text(),\""+ strOsSelect + "\")]");
 
     public static final Target VERSION = Target.the("select the version of the operating system")
@@ -30,7 +31,7 @@ public class UTestDevices extends PageObject {
     public static final Target MODEL = Target.the("select the model of your mobile device")
             .locatedBy("(//span[@class=\"btn btn-default form-control ui-select-toggle\"])[5]");
     public static final Target E5_SELECT = Target.the("the model is E5")
-            .locatedBy("(//span[@class=\"ui-select-choices-row-inner\"])[136]");
+            .locatedBy("//span[@class=\"ui-select-choices-row-inner\"]//div[contains(text(),\"W220\")]");
 
     public static final Target OS_MOBILE = Target.the("select the operative system of your mobile device")
             .locatedBy("(//span[@class=\"btn btn-default form-control ui-select-toggle\"])[6]");

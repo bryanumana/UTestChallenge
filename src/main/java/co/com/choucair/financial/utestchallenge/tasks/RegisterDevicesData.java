@@ -1,30 +1,36 @@
 package co.com.choucair.financial.utestchallenge.tasks;
 
 import co.com.choucair.financial.utestchallenge.userinterfaces.UTestDevices;
-import net.serenitybdd.core.annotations.findby.By;
 import net.serenitybdd.screenplay.Actor;
 
-import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Click;
-import net.serenitybdd.screenplay.actions.Enter;
-import net.serenitybdd.screenplay.actions.SelectFromOptions;
-import net.serenitybdd.screenplay.actions.SendKeys;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.support.ui.Select;
 
 public class RegisterDevicesData implements Task {
-    public static RegisterDevicesData dataDevices() {
-        return Tasks.instrumented(RegisterDevicesData.class);
+    private static String strOSI;
+
+    public RegisterDevicesData(String strOS) {
+        RegisterDevicesData.strOSI = strOS;
     }
 
+    public static String getStrOSI() {
+        return strOSI;
+    }
+
+    public static void setStrOSI(String strOSI) {
+        RegisterDevicesData.strOSI = strOSI;
+    }
+
+    public static RegisterDevicesData dataDevices(String strOS) {
+        return Tasks.instrumented(RegisterDevicesData.class, strOS);
+    }
 
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 Click.on(UTestDevices.OS),
-                Click.on(UTestDevices.WINDOWS_SELECT),
+                Click.on(UTestDevices.OS_SELECT),
                 Click.on(UTestDevices.VERSION),
                 Click.on(UTestDevices.SEVEN_SELECT),
                 Click.on(UTestDevices.LANGUAGE),

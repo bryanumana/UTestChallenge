@@ -11,6 +11,16 @@ public class UserData {
     private String strPassword;
     private String strConfirmPassword;
 
+    private String strOS;
+
+    public String getStrOS() {
+        return strOS;
+    }
+
+    public void setStrOS(String strOS) {
+        this.strOS = strOS;
+    }
+
     public String getStrConfirmPassword() {
         return strConfirmPassword;
     }

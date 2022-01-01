@@ -39,7 +39,10 @@ public class UTestAccountStepDefinitions {
                 ),
 
                 RegisterAddressData.dataAddress(),
-                RegisterDevicesData.dataDevices(),
+
+                RegisterDevicesData.dataDevices(
+                        userDataList.get(0).getStrOS()
+                ),
                 RegisterPasswordData.dataPassword(
                         userDataList.get(0).getStrPassword(),
                         userDataList.get(0).getStrConfirmPassword()
