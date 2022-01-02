@@ -1,6 +1,5 @@
 package co.com.choucair.financial.utestchallenge.tasks;
 
-import co.com.choucair.financial.utestchallenge.userinterfaces.UTestDevices;
 import co.com.choucair.financial.utestchallenge.userinterfaces.UTestPersonal;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
@@ -39,9 +38,11 @@ public class RegisterPersonalData implements Task {
                 SendKeys.of(strName).into(UTestPersonal.FIRST_NAME_TEXT),
                 SendKeys.of(strLastName).into(UTestPersonal.LAST_NAME_TEXT),
                 SendKeys.of(strEmail).into(UTestPersonal.EMAIL_TEXT),
+
                 SelectFromOptions.byVisibleText(strMonth).from(UTestPersonal.MONTH_SELECT),
                 SelectFromOptions.byVisibleText(strDay).from(UTestPersonal.DAY_SELECT),
                 SelectFromOptions.byVisibleText(strYear).from(UTestPersonal.YEAR_SELECT),
+
                 Click.on(UTestPersonal.ENTER_BUTTON)
                 );
     }

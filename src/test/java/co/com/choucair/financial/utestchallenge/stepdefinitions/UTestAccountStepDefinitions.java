@@ -23,7 +23,7 @@ public class UTestAccountStepDefinitions {
 
     @Given("^user enters the UTest platform$")
     public void userEntersTheUTestPlatform(){
-        OnStage.theActorCalled("Carlos").wasAbleTo(LoadThePage.theWebSite(), StarRegistration.onThePage());
+        OnStage.theActorCalled("Alberto").wasAbleTo(LoadThePage.theWebSite(), StarRegistration.onThePage());
     }
 
     @When("^user registers their data and their devices by completing the text boxes$")
@@ -38,11 +38,22 @@ public class UTestAccountStepDefinitions {
                         userDataList.get(0).getStrYear()
                 ),
 
-                RegisterAddressData.dataAddress(),
+                RegisterAddressData.dataAddress(
+                        userDataList.get(0).getStrCity(),
+                        userDataList.get(0).getStrState(),
+                        userDataList.get(0).getStrZIP(),
+                        userDataList.get(0).getStrCountry()
+                ),
 
                 RegisterDevicesData.dataDevices(
-                        userDataList.get(0).getStrOS()
+                        userDataList.get(0).getStrOS(),
+                        userDataList.get(0).getStrVersion(),
+                        userDataList.get(0).getStrLanguage(),
+                        userDataList.get(0).getStrMobile(),
+                        userDataList.get(0).getStrModel(),
+                        userDataList.get(0).getStrOsMobile()
                 ),
+
                 RegisterPasswordData.dataPassword(
                         userDataList.get(0).getStrPassword(),
                         userDataList.get(0).getStrConfirmPassword()

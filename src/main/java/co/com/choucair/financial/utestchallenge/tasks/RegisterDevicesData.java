@@ -9,21 +9,43 @@ import net.serenitybdd.screenplay.actions.Click;
 
 public class RegisterDevicesData implements Task {
     private static String strOSI;
-
-    public RegisterDevicesData(String strOS) {
-        RegisterDevicesData.strOSI = strOS;
-    }
+    private static String strVersionI;
+    private static String strLanguageI;
+    private static String strMobileI;
+    private static String strModelI;
+    private static String strOsMobileI;
 
     public static String getStrOSI() {
         return strOSI;
     }
+    public static void setStrOSI(String strOSI) { RegisterDevicesData.strOSI = strOSI; }
 
-    public static void setStrOSI(String strOSI) {
-        RegisterDevicesData.strOSI = strOSI;
+    public static String getStrVersionI() { return strVersionI; }
+    public static void setStrVersionI(String strVersionI) { RegisterDevicesData.strVersionI = strVersionI; }
+
+    public static String getStrLanguageI() { return strLanguageI; }
+    public static void setStrLanguageI(String strLanguageI) { RegisterDevicesData.strLanguageI = strLanguageI; }
+
+    public static String getStrMobileI() { return strMobileI; }
+    public static void setStrMobileI(String strMobileI) { RegisterDevicesData.strMobileI = strMobileI; }
+
+    public static String getStrModelI() { return strModelI; }
+    public static void setStrModelI(String strModelI) { RegisterDevicesData.strModelI = strModelI; }
+
+    public static String getStrOsMobileI() { return strOsMobileI; }
+    public static void setStrOsMobileI(String strOsMobileI) { RegisterDevicesData.strOsMobileI = strOsMobileI; }
+
+    public RegisterDevicesData(String strOS, String strVersion, String strLanguage, String strMobile, String strModel, String strOsMobile) {
+        RegisterDevicesData.strOSI = strOS;
+        RegisterDevicesData.strVersionI  = strVersion;
+        RegisterDevicesData.strLanguageI = strLanguage;
+        RegisterDevicesData.strMobileI = strMobile;
+        RegisterDevicesData.strModelI = strModel;
+        RegisterDevicesData.strOsMobileI = strOsMobile;
     }
 
-    public static RegisterDevicesData dataDevices(String strOS) {
-        return Tasks.instrumented(RegisterDevicesData.class, strOS);
+    public static RegisterDevicesData dataDevices(String strOS, String strVersion, String strLanguage, String strMobile, String strModel, String strOsMobile) {
+        return Tasks.instrumented(RegisterDevicesData.class, strOS, strVersion, strLanguage, strMobile, strModel, strOsMobile);
     }
 
     @Override
@@ -31,16 +53,22 @@ public class RegisterDevicesData implements Task {
         actor.attemptsTo(
                 Click.on(UTestDevices.OS),
                 Click.on(UTestDevices.OS_SELECT),
+
                 Click.on(UTestDevices.VERSION),
-                Click.on(UTestDevices.SEVEN_SELECT),
+                Click.on(UTestDevices.VERSION_SELECT),
+
                 Click.on(UTestDevices.LANGUAGE),
-                Click.on(UTestDevices.SPANISH_SELECT),
+                Click.on(UTestDevices.LANGUAGE_SELECT),
+
                 Click.on(UTestDevices.MOBILE),
-                Click.on(UTestDevices.MOTOROLA_SELECT),
+                Click.on(UTestDevices.MOBILE_SELECT),
+
                 Click.on(UTestDevices.MODEL),
-                Click.on(UTestDevices.E5_SELECT),
+                Click.on(UTestDevices.MODEL_SELECT),
+
                 Click.on(UTestDevices.OS_MOBILE),
-                Click.on(UTestDevices.ANDROID8_SELECT),
+                Click.on(UTestDevices.OS_MOBILE_SELECT),
+
                 Click.on(UTestDevices.ENTER_BUTTON)
         );
 
