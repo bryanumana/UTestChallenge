@@ -14,13 +14,13 @@ public class UTestAddress extends PageObject {
     public static final Target ZC_TEXT = Target.the("when you write the zip code of the city")
             .located(By.id("zip"));
 
-    public static final Target STATE = Target.the("select your computer's operating system")
+    public static final Target STATE = Target.the("when you select the state in the drop down list")
             .locatedBy("(//span[@class=\"btn btn-default form-control ui-select-toggle\"])[1]");
-    public static final Target STATE_SELECT = Target.the("the operating system is Windows")
+    public static final Target STATE_SELECT = Target.the("select your state")
             .locatedBy("//span[@class=\"ui-select-choices-row-inner\"]//div[contains(text(),\""+ strStateSelect + "\")]");
-    public static final Target COUNTRY = Target.the("select your computer's operating system")
+    public static final Target COUNTRY = Target.the("when you select the country in the drop down list")
             .locatedBy("(//span[@class=\"btn btn-default form-control ui-select-toggle\"])[2]");
-    public static final Target COUNTRY_SELECT = Target.the("the operating system is Windows")
+    public static final Target COUNTRY_SELECT = Target.the("select your country")
             .locatedBy("//span[@class=\"ui-select-choices-row-inner\"]//div[contains(text(),\""+ strCountrySelect + "\")]");
 
 
