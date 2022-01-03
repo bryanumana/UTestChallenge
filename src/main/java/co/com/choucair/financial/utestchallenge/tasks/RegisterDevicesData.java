@@ -61,8 +61,16 @@ public class RegisterDevicesData implements Task {
                 Click.on(UTestDevices.LANGUAGE_SELECT),
 
                 Click.on(UTestDevices.MOBILE),
-                Click.on(UTestDevices.MOBILE_SELECT),
+                Click.on(UTestDevices.MOBILE_SELECT)
+        );
 
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        actor.attemptsTo(
                 Click.on(UTestDevices.MODEL),
                 Click.on(UTestDevices.MODEL_SELECT),
 
