@@ -6,8 +6,6 @@ import net.thucydides.core.pages.PageObject;
 import org.openqa.selenium.By;
 
 public class UTestAddress extends PageObject {
-    private static String strStateSelect = RegisterAddressData.getStrStateI();
-    private static String strCountrySelect = RegisterAddressData.getStrCountryI();
 
     public static final Target CITY_TEXT = Target.the("when you write the city in which you live")
             .located(By.id("city"));
@@ -16,13 +14,12 @@ public class UTestAddress extends PageObject {
 
     public static final Target STATE = Target.the("when you select the state in the drop down list")
             .locatedBy("(//span[@class=\"btn btn-default form-control ui-select-toggle\"])[1]");
-    public static final Target STATE_SELECT = Target.the("select your state")
-            .locatedBy("//span[@class=\"ui-select-choices-row-inner\"]//div[contains(text(),\""+ strStateSelect + "\")]");
+    public static final Target STATE_SELECT = Target.the("select your country")
+            .locatedBy("//input[@type=\"search\"]");
     public static final Target COUNTRY = Target.the("when you select the country in the drop down list")
             .locatedBy("(//span[@class=\"btn btn-default form-control ui-select-toggle\"])[2]");
     public static final Target COUNTRY_SELECT = Target.the("select your country")
-            .locatedBy("//span[@class=\"ui-select-choices-row-inner\"]//div[contains(text(),\""+ strCountrySelect + "\")]");
-
+            .locatedBy("(//input[@type=\"search\"])[2]");
 
     public static final Target ENTER_BUTTON = Target.the("button to go to the next step")
             .locatedBy("//a[@class=\"btn btn-blue pull-right\"]");
