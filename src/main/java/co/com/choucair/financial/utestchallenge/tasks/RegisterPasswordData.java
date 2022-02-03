@@ -1,6 +1,6 @@
 package co.com.choucair.financial.utestchallenge.tasks;
 
-import co.com.choucair.financial.utestchallenge.userinterfaces.UTestCompletePage;
+import co.com.choucair.financial.utestchallenge.userinterfaces.UTestTheLastStepPage;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
@@ -24,11 +24,11 @@ public class RegisterPasswordData implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                SendKeys.of(strPassword).into(UTestCompletePage.PASSWORD_TEXT),
-                SendKeys.of(strConfirmPassword).into(UTestCompletePage.CONFIRM_PASSWORD_TEXT),
-                Click.on(UTestCompletePage.INFORMED_CHECK),
-                Click.on(UTestCompletePage.TERMS_CHECK),
-                Click.on(UTestCompletePage.PRIVACY_CHECK)
+                SendKeys.of(strPassword).into(UTestTheLastStepPage.PASSWORD_TEXT),
+                SendKeys.of(strConfirmPassword).into(UTestTheLastStepPage.CONFIRM_PASSWORD_TEXT),
+                Click.on(UTestTheLastStepPage.INFORMED_CHECK),
+                Click.on(UTestTheLastStepPage.TERMS_CHECK),
+                Click.on(UTestTheLastStepPage.PRIVACY_CHECK)
                 //Click.on(UTestComplete.ENTER_BUTTON)
         );
     }

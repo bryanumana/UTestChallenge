@@ -4,7 +4,7 @@ import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.screenplay.targets.Target;
 import org.openqa.selenium.By;
 
-public class UTestCompletePage extends PageObject {
+public class UTestTheLastStepPage extends PageObject {
     public static final Target PASSWORD_TEXT = Target.the("when you write your password")
             .located(By.id("password"));
     public static final Target CONFIRM_PASSWORD_TEXT = Target.the("when you to confirm your password")

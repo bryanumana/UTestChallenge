@@ -32,13 +32,7 @@ public class UTestAccountStepDefinitions {
         theActorInTheSpotlight().attemptsTo(
                 StarRegistration.onThePage(),
                 TellAboutYour.dataPersonal(userDataList.get(0)),
-
-                RegisterAddressData.dataAddress(
-                        userDataList.get(0).getStrCity(),
-                        userDataList.get(0).getStrState(),
-                        userDataList.get(0).getStrZIP(),
-                        userDataList.get(0).getStrCountry()
-                ),
+                AddYour.dataAddress(userDataList.get(0)),
 
                 RegisterDevicesData.dataDevices(
                         userDataList.get(0).getStrOS(),
