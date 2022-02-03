@@ -1,6 +1,6 @@
 package co.com.choucair.financial.utestchallenge.tasks;
 
-import co.com.choucair.financial.utestchallenge.userinterfaces.UTestHome;
+import co.com.choucair.financial.utestchallenge.userinterfaces.UTestHomePage;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
@@ -14,6 +14,6 @@ public class StarRegistration implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        actor.attemptsTo(Click.on(UTestHome.JOIN_BUTTON));
+        actor.attemptsTo(Click.on(UTestHomePage.JOIN_BUTTON));
     }
 }

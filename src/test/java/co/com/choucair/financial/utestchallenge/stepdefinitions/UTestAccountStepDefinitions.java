@@ -9,34 +9,29 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import net.serenitybdd.screenplay.GivenWhenThen;
-import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 
 import java.util.List;
+
+import static net.serenitybdd.screenplay.actors.OnStage.*;
 
 public class UTestAccountStepDefinitions {
 
     @Before
     public void setStage(){
-        OnStage.setTheStage(new OnlineCast());
+        setTheStage(new OnlineCast());
     }
 
     @Given("^user enters the UTest platform$")
     public void userEntersTheUTestPlatform(){
-        OnStage.theActorCalled("Alberto").wasAbleTo(LoadThePage.theWebSite(), StarRegistration.onThePage());
+        theActorCalled("Alberto").wasAbleTo(Load.theWebSite());
     }
 
-    @When("^user registers their data and their devices by completing the text boxes$")
-    public void userRegistersTheirDataAndTheirDevicesByCompletingTheTextBoxes(List <UserData> userDataList) throws Exception{
-        OnStage.theActorInTheSpotlight().attemptsTo(
-                RegisterPersonalData.dataPersonal(
-                        userDataList.get(0).getStrLastName(),
-                        userDataList.get(0).getStrName(),
-                        userDataList.get(0).getStrEmail(),
-                        userDataList.get(0).getStrMonth(),
-                        userDataList.get(0).getStrDay(),
-                        userDataList.get(0).getStrYear()
-                ),
+    @When("^user registers their data and their devices$")
+    public void userRegistersTheirDataAndTheirDevices(List <UserData> userDataList) throws Exception{
+        theActorInTheSpotlight().attemptsTo(
+                StarRegistration.onThePage(),
+                TellAboutYour.dataPersonal(userDataList.get(0)),
 
                 RegisterAddressData.dataAddress(
                         userDataList.get(0).getStrCity(),
@@ -61,8 +56,8 @@ public class UTestAccountStepDefinitions {
         );
     }
 
-    @Then("^user sees the button called$")
-    public void userSeesTheButtonCalledCompleteSetup(List<ConfirmLastStep> confirmLastStepList)throws Exception {
-        OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(LastStep.toThe(confirmLastStepList.get(0).getStrNameButton())));
+    @Then("^user sees the page called$")
+    public void userSeesThePageCalled(List<ConfirmLastStep> confirmLastStepList)throws Exception {
+        theActorInTheSpotlight().should(GivenWhenThen.seeThat(LastStep.toThe(confirmLastStepList.get(0).getStrNameButton())));
     }
 }

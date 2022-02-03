@@ -1,6 +1,6 @@
 package co.com.choucair.financial.utestchallenge.quesitons;
 
-import co.com.choucair.financial.utestchallenge.userinterfaces.UTestComplete;
+import co.com.choucair.financial.utestchallenge.userinterfaces.UTestCompletePage;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.questions.Text;
@@ -19,7 +19,7 @@ public class LastStep implements Question <Boolean> {
     @Override
     public Boolean answeredBy(Actor actor) {
         boolean result;
-        String nameButtonU = Text.of(UTestComplete.NAME_BUTTON).viewedBy(actor).asString();
+        String nameButtonU = Text.of(UTestCompletePage.NAME_BUTTON).viewedBy(actor).asString();
 
         if(nameButton.equals(nameButtonU)){
             result = true;

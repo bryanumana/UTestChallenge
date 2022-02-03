@@ -1,8 +1,7 @@
 package co.com.choucair.financial.utestchallenge.tasks;
 
-import co.com.choucair.financial.utestchallenge.userinterfaces.UTestAddress;
+import co.com.choucair.financial.utestchallenge.userinterfaces.UTestAddressPage;
 
-import co.com.choucair.financial.utestchallenge.userinterfaces.UTestDevices;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
@@ -37,21 +36,21 @@ public class RegisterAddressData implements Task {
             e.printStackTrace();
         }
         actor.attemptsTo(
-                DoubleClick.on(UTestAddress.CITY_TEXT),
-                SendKeys.of(strCity).into(UTestAddress.CITY_TEXT),
-                SendKeys.of(Keys.ARROW_DOWN, Keys.ENTER).into(UTestAddress.CITY_TEXT),
-                SendKeys.of(Keys.ENTER).into(UTestAddress.CITY_TEXT),
+                DoubleClick.on(UTestAddressPage.CITY_TEXT),
+                SendKeys.of(strCity).into(UTestAddressPage.CITY_TEXT),
+                SendKeys.of(Keys.ARROW_DOWN, Keys.ENTER).into(UTestAddressPage.CITY_TEXT),
+                SendKeys.of(Keys.ENTER).into(UTestAddressPage.CITY_TEXT),
 
-                DoubleClick.on(UTestAddress.ZC_TEXT),
-                SendKeys.of(strZIP).into(UTestAddress.ZC_TEXT),
+                DoubleClick.on(UTestAddressPage.ZC_TEXT),
+                SendKeys.of(strZIP).into(UTestAddressPage.ZC_TEXT),
 
-                Click.on(UTestAddress.COUNTRY),
-                SendKeys.of(strCountryI, Keys.ENTER).into(UTestAddress.COUNTRY_SELECT),
+                Click.on(UTestAddressPage.COUNTRY),
+                SendKeys.of(strCountryI, Keys.ENTER).into(UTestAddressPage.COUNTRY_SELECT),
 
-                Click.on(UTestAddress.STATE),
-                SendKeys.of(strStateI, Keys.ENTER).into(UTestAddress.STATE_SELECT),
+                Click.on(UTestAddressPage.STATE),
+                SendKeys.of(strStateI, Keys.ENTER).into(UTestAddressPage.STATE_SELECT),
 
-                Click.on(UTestAddress.ENTER_BUTTON)
+                Click.on(UTestAddressPage.ENTER_BUTTON)
         );
     }
 }

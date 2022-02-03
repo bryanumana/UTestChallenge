@@ -1,6 +1,6 @@
 package co.com.choucair.financial.utestchallenge.tasks;
 
-import co.com.choucair.financial.utestchallenge.userinterfaces.UTestDevices;
+import co.com.choucair.financial.utestchallenge.userinterfaces.UTestDevicesPage;
 import net.serenitybdd.screenplay.Actor;
 
 import net.serenitybdd.screenplay.Task;
@@ -33,17 +33,17 @@ public class RegisterDevicesData implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Click.on(UTestDevices.OS),
-                SendKeys.of(strOSI, Keys.ENTER).into(UTestDevices.OS_SELECT),
+                Click.on(UTestDevicesPage.OS),
+                SendKeys.of(strOSI, Keys.ENTER).into(UTestDevicesPage.OS_SELECT),
 
-                Click.on(UTestDevices.VERSION),
-                SendKeys.of(strVersionI, Keys.ENTER).into(UTestDevices.VERSION_SELECT),
+                Click.on(UTestDevicesPage.VERSION),
+                SendKeys.of(strVersionI, Keys.ENTER).into(UTestDevicesPage.VERSION_SELECT),
 
-                Click.on(UTestDevices.LANGUAGE),
-                SendKeys.of(strLanguageI, Keys.ENTER).into(UTestDevices.LANGUAGE_SELECT),
+                Click.on(UTestDevicesPage.LANGUAGE),
+                SendKeys.of(strLanguageI, Keys.ENTER).into(UTestDevicesPage.LANGUAGE_SELECT),
 
-                Click.on(UTestDevices.MOBILE),
-                SendKeys.of(strMobileI, Keys.ENTER).into(UTestDevices.MOBILE_SELECT)
+                Click.on(UTestDevicesPage.MOBILE),
+                SendKeys.of(strMobileI, Keys.ENTER).into(UTestDevicesPage.MOBILE_SELECT)
         );
 
         try {
@@ -53,13 +53,13 @@ public class RegisterDevicesData implements Task {
         }
 
         actor.attemptsTo(
-                Click.on(UTestDevices.MODEL),
-                SendKeys.of(strModelI, Keys.ENTER).into(UTestDevices.MODEL_SELECT),
+                Click.on(UTestDevicesPage.MODEL),
+                SendKeys.of(strModelI, Keys.ENTER).into(UTestDevicesPage.MODEL_SELECT),
 
-                Click.on(UTestDevices.OS_MOBILE),
-                SendKeys.of(strOsMobileI, Keys.ENTER).into(UTestDevices.OS_MOBILE_SELECT),
+                Click.on(UTestDevicesPage.OS_MOBILE),
+                SendKeys.of(strOsMobileI, Keys.ENTER).into(UTestDevicesPage.OS_MOBILE_SELECT),
 
-                Click.on(UTestDevices.ENTER_BUTTON)
+                Click.on(UTestDevicesPage.ENTER_BUTTON)
         );
 
     }
