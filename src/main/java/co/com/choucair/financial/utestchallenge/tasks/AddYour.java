@@ -3,15 +3,19 @@ package co.com.choucair.financial.utestchallenge.tasks;
 import co.com.choucair.financial.utestchallenge.models.UserData;
 import co.com.choucair.financial.utestchallenge.userinterfaces.UTestAddressPage;
 
+import cucumber.api.junit.Cucumber;
+import cucumber.runtime.Timeout;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.DoubleClick;
 import net.serenitybdd.screenplay.actions.SendKeys;
+import net.serenitybdd.screenplay.waits.Wait;
 import org.openqa.selenium.Keys;
 
 public class AddYour implements Task {
+
     private UserData userData;
 
     public AddYour(UserData userData) {
@@ -24,7 +28,9 @@ public class AddYour implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
+
         actor.attemptsTo(
+
                 DoubleClick.on(UTestAddressPage.CITY_TEXT),
                 SendKeys.of(userData.getStrCity()).into(UTestAddressPage.CITY_TEXT),
                 SendKeys.of(Keys.ARROW_DOWN, Keys.ENTER).into(UTestAddressPage.CITY_TEXT),

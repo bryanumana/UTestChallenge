@@ -2,7 +2,7 @@ package co.com.choucair.financial.utestchallenge.stepdefinitions;
 
 import co.com.choucair.financial.utestchallenge.models.ButtonName;
 import co.com.choucair.financial.utestchallenge.models.UserData;
-import co.com.choucair.financial.utestchallenge.quesitons.LastStep;
+import co.com.choucair.financial.utestchallenge.quesitons.TheLastStep;
 import co.com.choucair.financial.utestchallenge.tasks.*;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
@@ -39,7 +39,7 @@ public class UTestAccountStepDefinitions {
     }
 
     @Then("^user sees the button called$")
-    public void userSeesTheButtonCalled(List<ButtonName> buttonNameList)throws Exception {
-        theActorInTheSpotlight().should(seeThat(LastStep.toThe(buttonNameList.get(0).getStrNameButton())));
+    public void userSeesTheButtonCalled(List<ButtonName> buttonName)throws Exception {
+        theActorInTheSpotlight().should(seeThat(TheLastStep.isToObserveThe(buttonName.get(0))));
     }
 }
