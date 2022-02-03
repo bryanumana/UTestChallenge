@@ -1,5 +1,6 @@
 package co.com.choucair.financial.utestchallenge.tasks;
 
+import co.com.choucair.financial.utestchallenge.models.UserData;
 import co.com.choucair.financial.utestchallenge.userinterfaces.UTestTheLastStepPage;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
@@ -7,25 +8,23 @@ import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.SendKeys;
 
-public class RegisterPasswordData implements Task {
+public class ImplementThe implements Task {
 
-    private String strPassword;
-    private String strConfirmPassword;
+    private UserData userData;
 
-    public RegisterPasswordData(String strPassword, String strConfirmPassword) {
-        this.strPassword = strPassword;
-        this.strConfirmPassword = strConfirmPassword;
+    public ImplementThe(UserData userData) {
+        this.userData = userData;
     }
 
-    public static RegisterPasswordData dataPassword(String strPassword, String strConfirmPassword) {
-        return Tasks.instrumented(RegisterPasswordData.class, strPassword, strConfirmPassword);
+    public static ImplementThe dataPassword(UserData userData) {
+        return Tasks.instrumented(ImplementThe.class, userData);
     }
 
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                SendKeys.of(strPassword).into(UTestTheLastStepPage.PASSWORD_TEXT),
-                SendKeys.of(strConfirmPassword).into(UTestTheLastStepPage.CONFIRM_PASSWORD_TEXT),
+                SendKeys.of(userData.getStrPassword()).into(UTestTheLastStepPage.PASSWORD_TEXT),
+                SendKeys.of(userData.getStrConfirmPassword()).into(UTestTheLastStepPage.CONFIRM_PASSWORD_TEXT),
                 Click.on(UTestTheLastStepPage.INFORMED_CHECK),
                 Click.on(UTestTheLastStepPage.TERMS_CHECK),
                 Click.on(UTestTheLastStepPage.PRIVACY_CHECK)

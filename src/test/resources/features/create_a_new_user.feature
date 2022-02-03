@@ -11,7 +11,7 @@ Feature: New Account On UTest
     |strName|strLastName|strEmail      |strMonth |strDay|strYear|strCity|strState|strZIP|strCountry|strOS|strVersion|strLanguage|strMobile|strModel|strOsMobile|strPassword  |strConfirmPassword|
     |Bryan  |Umaña Gómez|bugh@gmail.com|June     |20    |1990   |Ottawa |Ontario |Z1R   |Canada    |Linux|Kali      |Spanish    |Motorola |W220    |Java ME    |Choucair2021*|Choucair2021*     |
 
-    Then user sees the page called
+    Then user sees the button called
     |strNameButton |
     |Complete Setup|
 

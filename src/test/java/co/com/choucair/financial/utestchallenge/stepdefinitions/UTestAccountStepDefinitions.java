@@ -1,6 +1,6 @@
 package co.com.choucair.financial.utestchallenge.stepdefinitions;
 
-import co.com.choucair.financial.utestchallenge.models.ConfirmLastStep;
+import co.com.choucair.financial.utestchallenge.models.ButtonName;
 import co.com.choucair.financial.utestchallenge.models.UserData;
 import co.com.choucair.financial.utestchallenge.quesitons.LastStep;
 import co.com.choucair.financial.utestchallenge.tasks.*;
@@ -8,11 +8,11 @@ import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import net.serenitybdd.screenplay.GivenWhenThen;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 
 import java.util.List;
 
+import static net.serenitybdd.screenplay.GivenWhenThen.*;
 import static net.serenitybdd.screenplay.actors.OnStage.*;
 
 public class UTestAccountStepDefinitions {
@@ -33,25 +33,13 @@ public class UTestAccountStepDefinitions {
                 StarRegistration.onThePage(),
                 TellAboutYour.dataPersonal(userDataList.get(0)),
                 AddYour.dataAddress(userDataList.get(0)),
-
-                RegisterDevicesData.dataDevices(
-                        userDataList.get(0).getStrOS(),
-                        userDataList.get(0).getStrVersion(),
-                        userDataList.get(0).getStrLanguage(),
-                        userDataList.get(0).getStrMobile(),
-                        userDataList.get(0).getStrModel(),
-                        userDataList.get(0).getStrOsMobile()
-                ),
-
-                RegisterPasswordData.dataPassword(
-                        userDataList.get(0).getStrPassword(),
-                        userDataList.get(0).getStrConfirmPassword()
-                )
+                EnterYour.dataDevices(userDataList.get(0)),
+                ImplementThe.dataPassword(userDataList.get(0))
         );
     }
 
-    @Then("^user sees the page called$")
-    public void userSeesThePageCalled(List<ConfirmLastStep> confirmLastStepList)throws Exception {
-        theActorInTheSpotlight().should(GivenWhenThen.seeThat(LastStep.toThe(confirmLastStepList.get(0).getStrNameButton())));
+    @Then("^user sees the button called$")
+    public void userSeesTheButtonCalled(List<ButtonName> buttonNameList)throws Exception {
+        theActorInTheSpotlight().should(seeThat(LastStep.toThe(buttonNameList.get(0).getStrNameButton())));
     }
 }

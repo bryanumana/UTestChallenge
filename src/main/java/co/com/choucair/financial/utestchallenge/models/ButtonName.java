@@ -1,6 +1,6 @@
 package co.com.choucair.financial.utestchallenge.models;
 
-public class ConfirmLastStep {
+public class ButtonName {
     private String strNameButton;
 
     public String getStrNameButton() {
