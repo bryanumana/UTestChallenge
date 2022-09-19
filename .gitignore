@@ -1,1 +1,7 @@
 *.png
+*.bin
+*.lock
+*.xml
+*.jpg
+*.js
+*.css
